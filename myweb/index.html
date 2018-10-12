@@ -1,55 +1,39 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <title>ICU Management</title>
+  <title>ICU Management System</title>
   <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
+		
       margin-bottom: 0;
       border-radius: 0;
+	   
     }
     
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
+    /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
+      background-color: black;
+      padding: 25px;
     }
     
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-	
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-	
-      margin: inherit;
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
   }
-  
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
   </style>
 </head>
 <body>
@@ -62,14 +46,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand"  >ICU Management System</a>
+      <a class="navbar-brand" href="#">Online ICU Mangement System</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Map</a></li>
-        <li><a href="#">Emergency</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Ambulance Tracking</a></li>
+        <li><a href="#">ICU Details</a></li>
+        <li><a href="#">Medicine Info</a></li>
+        <li><a href="#">Doctors Info </a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Contact Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -77,138 +64,79 @@
     </div>
   </div>
 </nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/rsz_slide1.jpg">
+        <div class="carousel-caption">
+          <h3>Throw Away from the Delay</h3>
+          <p> With Technology</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="img/rsz_5rsz_1slide2.jpg">
+        <div class="carousel-caption">
+          <h3>Locate Your Search</h3>
+          <p>Join With Via Mapping</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
   
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 jumbotron">
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Request Account</button>
-
-
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-   
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Register Form</h4>
-      </div>
-      <div class="modal-body">
-      
-      <form action="/action_page.php" class="text-left">
-    <div class="form-group">
-        <label for="name">Name in full:</label>
-      <input type="name" class="form-control" id="name" placeholder="Name In Full" name="name">
+<div class="container text-center">    
+  <h3>We are Targeting to give the best Service to Our Clients. </h3><br>
+  <div class="row">
+  <a href="#">
+    <div class="col-sm-4">
+      <img src="img/rsz_locate.png" class="img-responsive" style="width:100%" alt="Image"></a>
+      <p>Locate an Ambulance</p>
     </div>
-    <div class="form-group">
-      <label for="hsname">Hospital:</label>
-      <input type="text" class="form-control" id="haname" placeholder="Hospital" name="hsname">
-    </div> 
-    
-    <div class="form-group">
-        <label for="career">Career Situation:</label>
-      <input type="name" class="form-control" id="career" placeholder="Career Situation" name="name">
+    <a href="#">
+    <div class="col-sm-4"> 
+      <img src="img/organ.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+      <p>Organ Donation</p>    
     </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="mail" placeholder="Email" name="mail">
-    </div> 
-    
-    <div class="form-group">
-        <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Psssword" name="email">
-    </div>
-    <div class="form-group">
-      <label for="text">Choose our Service:</label>
-      <input type="text" class="form-control" id="txt" placeholder="Service" name="txt">
-    </div> 
-
-      </div>
-      <div class="modal-footer">
-      <button type="button" class="btn btn-success" id="show">Submit</button>
-     
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <div class="alert alert-success">
-  <strong>Attention!!</strong> Please be kind input correct data of you.
-</div>
-        </form>
-      </div>
-    </div>
-
-  </div>
-</div>
-    
-  </div>
-  <div class=" jumbotron col-sm-8 text-left">
-            <div>
-              <h3>ICU Management System</h3>
-            </div>
-            
-    
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          
-            
-            <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-              </ol>
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active"> <img src="img/im1.jpg" alt="medi" width="460" height="345">
-                  <div class="carousel-caption">
-                    <h3>With New Figure</h3>
-                    <p>All island Hospitals Now Available in Our site..</p>
-                  </div>
-                </div>
-                <div class="item"> <img src="img/im2.jpeg" alt="medi" width="460" height="345">
-                  <div class="carousel-caption">
-                    <h3>With New Figure</h3>
-                    <p>All island Hospitals Now Available in Our site..</p>
-                  </div>
-                </div>
-                <div class="item"> <img src="img/img4.jpg" alt="medi" width="460" height="345">
-                  <div class="carousel-caption">
-                    <h3>With New Figure</h3>
-                    <p>All island Hospitals Now Available in Our site..</p>
-                  </div>
-                </div>
-                <div class="item"> <img src="img/img3.jpg" alt="Flower" width="460" height="345">
-                  <div class="carousel-caption">
-                    <h3>With New Figure</h3>
-                    <p>All island Hospitals Now Available in Our site..</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Left and right controls -->
-              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-        </div>
-    </div>
-  </div>
-  </div>
-  <div>
-<div class="col-sm-2 sidenav">
+    <div class="col-sm-4">
       <div class="well">
-  </div>
-      <div class="well">
-        <p>ADS</p>
+       <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">Emergency Contacts
+        </button>
       </div>
-  </div>
-  </div>
-    
-    
-    
-    
-    <div class="container-fluid">
-        <div class="jumbotron"></div>
+      <div class="well">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Request an Account
+        </button>
+       
+       
+       
+      </div>
     </div>
+  </div>
+</div><br>
+
+<footer class="container-fluid text-center">
+  <p>Copyright © 2018 </p>
+</footer>
+
 </body>
-
-
 </html>
+
+
 
